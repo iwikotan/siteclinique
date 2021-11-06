@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Material Design for Bootstrap</title>
+    <!-- MDB icon -->
+    <!-- Font Awesome -->
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    />
+    <link rel="stylesheet" href=" {% static 'css/mdb.min.css' %}" />
+    <script src="{%static 'js/mdb.main.js' %}"></script>
+</head>
+<body>
+<!--navba-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo03"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <a class="navbar-brand" href="#">Navbar</a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"
+              >Disabled</a
+            >
+          </li>
+        </ul>
+        <form class="d-flex input-group w-auto">
+          <input
+            type="search"
+            class="form-control"
+            placeholder="Type query"
+            aria-label="Search"
+          />
+          <button
+            class="btn btn-outline-primary"
+            type="button"
+            data-mdb-ripple-color="dark"
+          >
+            Search
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+<!--navba-->
+<!--page-->
+
+<!--pages-->
+<!--mes codes-->
+    <h1> <center> la page d'acceuille </center></h1>
+    <h4>{{patients|length|upper}} patients sont dans la base</h4>
+
+ {% for patient in patients%}
+ 
+    <article>
+        <h3># {{patient.id}}-{{patient.noms}} {{patient.prenoms|truncatewords:1}}</h3> 
+    <p> {{patient.age}} {{patient.statut}}</p>  
+    </article>
+    <p>les details de l article {{patient.id}} sont : </p> 
+    <a href="{% url 'details' %}">details</a>
+    <hr>
+    {% empty %}
+    <p>sorry c est la fin il n y pas de donnees </p>
+ {%endfor%}
+ <!--fin des mes codes-->
+ 
+</body>
+</html>
