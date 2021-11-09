@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-fjb2is7l@%ocpfz2wem!y-t0ei439f_fq76nx9j7r0)ksxwve=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['polycliniquedelacite.herokuapp.com', 127.0.0.1]
+ALLOWED_HOSTS = ['polycliniquedelacite.herokuapp.com','127.0.0.1']
 
 
 # Application definition
