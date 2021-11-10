@@ -11,7 +11,7 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-#os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'gueto.settings')
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'gueto.gueto.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'gueto.settings')
+#os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'gueto.gueto.settings')
 
 application = get_wsgi_application()
