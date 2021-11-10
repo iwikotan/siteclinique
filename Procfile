@@ -1,1 +1,1 @@
-web: gunicorn gueto.gueto.wsgi
+web: gunicorn gueto.wsgi
